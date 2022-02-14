@@ -7,7 +7,8 @@
   "author": "Orkun ÇAKILKAYA <orkuncakilkaya@gmail.com> | Isaac Juracich",
   "license": "MIT",
   "scripts": {
-    "start": "node --experimental-modules --experimental-specifier-resolution=node src/index.js",
+    "build": "babel src/index.js -d dist",
+    "start": "npm run build && node dist/index.js",
     "lint-and-fix": "yarn run lint --fix",
     "lint": "eslint src/**.js"
   },
@@ -29,6 +30,9 @@
     "vectorize-text": "^3.2.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.17.2",
+    "@babel/preset-env": "^7.16.11",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3"
