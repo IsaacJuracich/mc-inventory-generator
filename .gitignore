@@ -3,3 +3,4 @@ node_modules
 assets/items
 *.DS_Store
 .env
+test
